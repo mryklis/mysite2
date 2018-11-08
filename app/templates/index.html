@@ -1,0 +1,9 @@
+
+{% extends "base.html" %}
+    {% block content %}
+        Hello, {{ user.username }}!<br>
+        Your pass is {{user.password}}
+        {% for post in posts %}
+            <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+        {% endfor %}
+    {% endblock %}
