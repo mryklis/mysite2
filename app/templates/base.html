@@ -31,7 +31,7 @@
 
             <!-- Header -->
 <header class="w3-container w3-center w3-padding-32">
-    <h2><b><p>Welcome to <span class="w3-tag">Maxim's</span>Dashboard</p></b></h2>
+    <h2><b><p>Welcome to <span class="w3-tag">Maxim's</span> Dashboard</p></b></h2>
 </header>
             <!-- Grid -->
 <div class="w3-row">
@@ -55,7 +55,7 @@
 
 
 
-    
+
   </div>
 <!-- END BLOG ENTRIES -->
 </div>
@@ -78,7 +78,12 @@
 </div>
         <!-- Footer -->
     <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-    <a href="{{ url_for('index') }}">Home</a> <a href="{{ url_for('login') }}">Login</a>
+    <a href="{{ url_for('index') }}">Home</a>
+        {% if current_user.is_anonymous %}
+    <a href="{{ url_for('login') }}">Login</a>
+        {% else %}
+    <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
     <p>Powered by <a href="https://www.linkedin.com/in/maximryklis/" target="_blank">Maxim</a></p>
     </footer>
 </body>
