@@ -31,60 +31,52 @@
 
             <!-- Header -->
 <header class="w3-container w3-center w3-padding-32">
-    <h2><b><p>Welcome to <span class="w3-tag">Maxim's</span> Dashboard</p></b></h2>
+        <h2><b><p>Welcome to <span class="w3-tag">Maxim's</span> Dashboard</p></b></h2>
 </header>
             <!-- Grid -->
-<div class="w3-row">
+        <div class="w3-row">
+            <!-- Blog entries -->
+        <div class="w3-col l8 s12">
+            <!-- Blog entry -->
+        <div class="w3-card-4 w3-margin w3-white">
 
+        <div class="w3-container">
+            {% block content %}{% endblock %}
+        </div>
+        </div>
+        <hr>
 
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
+        <!-- Blog entry -->
+        <div class="w3-card-4 w3-margin w3-white">
+        </div>
+        <!-- END BLOG ENTRIES -->
+        </div>
 
-    <div class="w3-container">
-    {% block content %}{% endblock %}
-    </div>
-
-
-  </div>
-  <hr>
-
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-
-
-
-
-  </div>
-<!-- END BLOG ENTRIES -->
-</div>
-
-    <!-- Introduction menu -->
-    <div class="w3-col l4">
-      <!-- About Card -->
-      <div class="w3-card w3-margin w3-margin-top">
-      <img src="/static/images/logo.jpg" style="width:100%">
+        <!-- Introduction menu -->
+        <div class="w3-col l4">
+        <!-- About Card -->
+        <div class="w3-card w3-margin w3-margin-top">
+        <img src="/static/images/logo.jpg" style="width:100%">
         <div class="w3-container w3-white">
           <h4><b>Maxim Ryklis</b></h4>
           <p>Useful stuff</p>
         </div>
-      </div><hr>
-<!-- END GRID -->
-</div><br>
+        </div><hr>
+        <!-- END GRID -->
+        </div><br>
 
-<!-- END w3-content -->
-</div>
-</div>
+        <!-- END w3-content -->
+        </div>
+        </div>
         <!-- Footer -->
-    <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-    <a href="{{ url_for('index') }}">Home</a>
-        {% if current_user.is_anonymous %}
-    <a href="{{ url_for('login') }}">Login</a>
-        {% else %}
-    <a href="{{ url_for('logout') }}">Logout</a>
-        {% endif %}
-    <p>Powered by <a href="https://www.linkedin.com/in/maximryklis/" target="_blank">Maxim</a></p>
+     <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+        <a href="{{ url_for('index') }}">Home</a>
+            {% if current_user.is_anonymous %}
+        <a href="{{ url_for('login') }}">Login</a>
+            {% else %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+            {% endif %}
+        <p>Powered by <a href="https://www.linkedin.com/in/maximryklis/" target="_blank">Maxim</a></p>
     </footer>
 </body>
 </html>
